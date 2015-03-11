@@ -8,7 +8,8 @@
            "symfony/yaml": "v2.4.1",
            "symfony/filesystem": "2.4.1",
            "symfony/process": "2.5.5",
-           "guzzle/plugin-cookie": "*"
+           "guzzle/plugin-cookie": "*",
+           "swiftmailer/swiftmailer": "5.*"
     },
     "autoload": {
         "psr-0": {
