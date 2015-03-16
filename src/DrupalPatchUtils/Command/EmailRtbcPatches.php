@@ -58,7 +58,7 @@ class EmailRtbcPatches extends ValidatePatch {
         }
         $message = \Swift_Message::newInstance()
           ->setSubject(
-            'Drupal.org - Found ' . count($issues) . ' Failed RTBC\'s'
+            'Drupal.org - Found ' . count($failed_patches) . ' Failed RTBC\'s'
           )
           ->setFrom(array($email))
           ->setTo(array($email))
