@@ -29,10 +29,8 @@ class EmailRtbcPatches extends ValidatePatch {
     );
     $rtbc_queue = new RtbcQueue();
     $issues = $rtbc_queue->getIssueUris();
-    $progress = $this->getApplication()->getHelperSet()->get('progress');
 
     $failed_patches = array();
-    $progress->start($output, count($issues));
     foreach ($issues as $item) {
       $input->setArgument('url', $item);
       // Ignore NULL return where checkPatch() is unable to determine if patch
@@ -45,9 +43,7 @@ class EmailRtbcPatches extends ValidatePatch {
           'output' => $this->getOutput()
         );
       }
-      $progress->advance();
     }
-    $progress->finish();
 
     if (count($failed_patches)) {
       if ($input->getArgument('email')) {
